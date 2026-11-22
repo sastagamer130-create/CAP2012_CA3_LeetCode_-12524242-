@@ -6,25 +6,25 @@ public:
         int count = 0;
         ListNode* temp = head;
 
-        // Count total nodes
+       
         while (temp != NULL) {
             count++;
             temp = temp->next;
         }
 
-        // If first node needs to be deleted
+      
         if (count == n) {
             return head->next;
         }
 
-        // Find the node before the one to delete
+       
         temp = head;
 
         for (int i = 1; i < count - n; i++) {
             temp = temp->next;
         }
 
-        // Delete the node
+       
         temp->next = temp->next->next;
 
         return head;
